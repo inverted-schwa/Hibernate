@@ -64,11 +64,14 @@ public class AppMain {
 	}
 	
 	public void mainMenu() {
+		int choice;
+		do {
 		sc=new Scanner(System.in);
 		System.out.println("-=Main Menu=-");
 		System.out.println("1. Log In");
 		System.out.println("2. Sign Up");
-		int choice = sc.nextInt();
+		System.out.println("3. Exit app");
+		choice = sc.nextInt();
 		switch(choice) {
 		case 1:
 			login();
@@ -76,13 +79,17 @@ public class AppMain {
 		case 2:
 			signup();
 			break;
+		case 3:
+			break;
 		default:
 			mainMenu();
 		}
+		}while(choice!=3);
 	}
 	
 	public void login() {
 		sc=new Scanner(System.in);
+		System.out.println("-=Log In=-");
 		System.out.println("Enter your user name");
 		String uname = sc.nextLine();
 		System.out.println("Enter your password");
@@ -91,6 +98,8 @@ public class AppMain {
 	}
 	
 	public void signup() {
-		
+		sc=new Scanner(System.in);
+		System.out.println("-=Sign Up=-");
+		userv.signup();
 	}
 }

@@ -11,8 +11,8 @@ import org.hibernate.cfg.Configuration;
 
 import deptStore.entities.Product;
 import deptStore.entities.User;
-import oneToMany.Student;
 
+@SuppressWarnings("deprecation")
 public class UserDao {
 	private SessionFactory fact;
 	private Session sess;
