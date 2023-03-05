@@ -3,6 +3,7 @@ package deptStore.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -10,6 +11,7 @@ import org.hibernate.cfg.Configuration;
 
 import deptStore.entities.Product;
 import deptStore.entities.User;
+import oneToMany.Student;
 
 public class UserDao {
 	private SessionFactory fact;
@@ -50,5 +52,17 @@ public class UserDao {
 		sess.save(u);
 		tx.commit();
 		System.out.println("Data saved");
+	}
+	
+	public void checkLogin(String uname, String pass) {
+		sess=fact.openSession();
+		Query<User> query = sess.createQuery("from User");
+		List<User> ulist=query.list();
+		ulist.forEach(u->{
+			if(uname.equals(u.getUsername())&&pass.equals(u.getPassword())) {
+				this.login=u;
+				System.out.println("Logged in as "+u.getUsername());
+			}
+		});
 	}
 }

@@ -1,5 +1,11 @@
 package deptStore;
 
+import java.util.Scanner;
+
+import deptStore.service.ItemService;
+import deptStore.service.ProductService;
+import deptStore.service.UserService;
+
 /*
  * Princy is a young girl with the passion to open her own department store. She has bought all the 
 products required to the store. She has to go digital and store all her products 
@@ -48,5 +54,43 @@ oCreate product, user, item as a pojo.
  */
 
 public class AppMain {
-
+	private ItemService iserv;
+	private ProductService pserv;
+	private UserService userv;
+	private Scanner sc;	
+	
+	public static void main(String[] args) {
+		
+	}
+	
+	public void mainMenu() {
+		sc=new Scanner(System.in);
+		System.out.println("-=Main Menu=-");
+		System.out.println("1. Log In");
+		System.out.println("2. Sign Up");
+		int choice = sc.nextInt();
+		switch(choice) {
+		case 1:
+			login();
+			break;
+		case 2:
+			signup();
+			break;
+		default:
+			mainMenu();
+		}
+	}
+	
+	public void login() {
+		sc=new Scanner(System.in);
+		System.out.println("Enter your user name");
+		String uname = sc.nextLine();
+		System.out.println("Enter your password");
+		String pass = sc.nextLine();
+		userv.login(uname, pass);
+	}
+	
+	public void signup() {
+		
+	}
 }

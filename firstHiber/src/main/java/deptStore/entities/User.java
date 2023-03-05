@@ -66,10 +66,10 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getSuperCoins() {
+	public int getSuperCoins() {
 		return superCoins;
 	}
-	public void setSuperCoins(String superCoins) {
+	public void setSuperCoins(int superCoins) {
 		this.superCoins = superCoins;
 	}
 	public boolean isAdmin() {
