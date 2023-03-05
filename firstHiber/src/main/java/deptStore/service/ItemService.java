@@ -1,5 +1,8 @@
 package deptStore.service;
 
-public class ItemService {
+import deptStore.dao.ItemDao;
 
+public class ItemService {
+	public ItemDao idao;
+	
 }

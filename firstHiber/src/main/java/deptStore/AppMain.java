@@ -59,8 +59,16 @@ public class AppMain {
 	private UserService userv;
 	private Scanner sc;	
 	
-	public static void main(String[] args) {
+	public AppMain() {
 		
+	}
+	
+	public static void main(String[] args) {
+		AppMain am = new AppMain();
+		am.userv.udao.insertDummyData();
+		am.iserv.idao.insertDummyData();
+		am.pserv.pdao.insertDummyData();
+		am.mainMenu();
 	}
 	
 	public void mainMenu() {
